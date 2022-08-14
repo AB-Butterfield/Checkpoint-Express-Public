@@ -64,7 +64,7 @@ describe('Todo routes', function () {
         });
     });
 
-    xit('POST creates a new task for that user & responds with the created task', function () {
+    it('POST creates a new task for that user & responds with the created task', function () {
       return supertest
         .post('/users/sarah/tasks')
         .send({ content: 'a new task for sarah' }) // the HTTP request body (remember to implement body parsing middleware)
