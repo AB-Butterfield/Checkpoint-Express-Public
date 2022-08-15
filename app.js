@@ -2,7 +2,11 @@ const express = require('express');
 const app = express();
 module.exports = app; // this line is only used to make testing easier.
 const userRoutes = require('./routes/index')
+const bodyParser = require('body-parser');
+const todos = require('./models/express-models/todos');
+
 app.use(express.json())
+app.use(bodyParser.json())
 // remember to plug in your router and any other middleware you may need here (i.e. body parser, mounting any router-level middleware, etc.)
 
 app.use("/", userRoutes)
